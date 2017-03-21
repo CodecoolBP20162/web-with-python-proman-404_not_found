@@ -19,10 +19,12 @@ $(document).ready(function(){
 });
 
 function printBoards() {
-    var title_array = localStorage.getItem("title");
+    var html = ""
+    var title_array = JSON.parse(localStorage.getItem("title"));
     for(var i = 0; i < title_array.length; i++) {
-        document.getElementById("boards").innerHTML = title_array[i];
+        html = html + "<p>" + title_array[i] + "</p>";
     }
+            document.getElementById("boards").innerHTML = html;
 };
 
 function addNewBoard() {
