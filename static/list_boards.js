@@ -19,19 +19,24 @@ $(document).ready(function(){
 });
 
 function printBoards() {
-    var html = ""
+    var html = "";
     var title_array = JSON.parse(localStorage.getItem("title"));
     for(var i = 0; i < title_array.length; i++) {
         html = html + "<p>" + title_array[i] + "</p>";
     }
-            document.getElementById("boards").innerHTML = html;
+    document.getElementById("boards").innerHTML = html;
 };
+
 
 function addNewBoard() {
     var title = document.getElementById("title");
-    var title_list = JSON.parse(localStorage.getItem("title"));
-    var index = title_list.length;
-    title_list[index] = title.value;
-    localStorage.setItem("title", JSON.stringify(title_list));
-    var test = JSON.parse(localStorage.getItem("title"));
+    if (localStorage.getItem("title") === null) {
+        localStorage.setItem("title", JSON.stringify([title.value]));
+    }
+    else {
+        var title_list = JSON.parse(localStorage.getItem("title"));
+        var index = title_list.length;
+        title_list[index] = title.value;
+        localStorage.setItem("title", JSON.stringify(title_list));
+        }
 };
