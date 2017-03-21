@@ -1,11 +1,10 @@
 {% extends "layout.html" %} {% block header %}
-<script type="text/javascript" src="{{ url_for('static', filename='list_boards.js') }}"></script>
-<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
-<style>
-
-</style>
+    <script type="text/javascript" src="{{ url_for('static', filename='list_boards.js') }}"></script>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
 {% endblock %} {% block content %}
 
 <body>
@@ -17,56 +16,21 @@
         </div>
     </nav>
 
-    <div class="w3-container">
-
-
-
-
-
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-8">
-                <div class="w3-panel w3-card w3-yellow">
-                    <p>w3-card</p>
-                </div>
-                <div class="w3-panel w3-card-2 w3-yellow">
-                    <p>w3-card-2</p>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="w3-panel w3-card-4 w3-yellow">
-                    <p>w3-card-4</p>
-                </div>
-                <div class="w3-panel w3-card-8 w3-yellow">
-                    <p>w3-card-8</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid bg-grey">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="w3-panel w3-card-12 w3-yellow">
-                    <p>w3-card-12</p>
-                </div>
-                <div class="w3-panel w3-card-16 w3-yellow">
-                    <p>w3-card-16</p>
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <div class="w3-panel w3-card-24 w3-yellow">
-                    <p>w3-card-24</p>
-                </div>
-                <div class="w3-panel w3-card-24 w3-yellow">
-                    <p>w3-card-24</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <button onclick="listBoards()">push it</button>
+<ul>
+    <li>
+        <a href="#">
+            <h2>BOARD</h2>
+            <p>Codecool</p>
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <h2>Title #2</h2>
+            <p>Text Content #2</p>
+        </a>
+    </li>
+</ul>
+<button onclick="listBoards()">push it</button>
 <div id="boards">test</div>
+</body>
 {% endblock %}
