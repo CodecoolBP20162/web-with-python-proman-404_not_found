@@ -8,65 +8,44 @@
 </style>
 {% endblock %} {% block content %}
 
-<body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header text-center">
-                <a class="navbar-brand" href="#">Proman</a>
-            </div>
-        </div>
-    </nav>
+<div class="container-fluid bg-grey">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="w3-card-4" style="width:90% height:50%;">
+<header class="w3-container w3-blue">
+    <h1>Header</h1>
+</header>
 
-    <div class="w3-container">
+<div class="w3-container">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
 
+<footer class="w3-container w3-blue">
+    <h5>Footer</h5>
+</footer>
+</div>
+</div>
+<div class="col-sm-4">
+    <div class="w3-card-4" style="width:90% height:50%;">
+<header class="w3-container w3-blue">
+    <h1>Header</h1>
+</header>
 
+<div class="w3-container">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
 
-
-
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-8">
-                <div class="w3-panel w3-card w3-yellow">
-                    <p>w3-card</p>
-                </div>
-                <div class="w3-panel w3-card-2 w3-yellow">
-                    <p>w3-card-2</p>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="w3-panel w3-card-4 w3-yellow">
-                    <p>w3-card-4</p>
-                </div>
-                <div class="w3-panel w3-card-8 w3-yellow">
-                    <p>w3-card-8</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid bg-grey">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="w3-panel w3-card-12 w3-yellow">
-                    <p>w3-card-12</p>
-                </div>
-                <div class="w3-panel w3-card-16 w3-yellow">
-                    <p>w3-card-16</p>
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <div class="w3-panel w3-card-24 w3-yellow">
-                    <p>w3-card-24</p>
-                </div>
-                <div class="w3-panel w3-card-24 w3-yellow">
-                    <p>w3-card-24</p>
-                </div>
-            </div>
-        </div>
-    </div>
+<footer class="w3-container w3-blue">
+    <h5>Footer</h5>
+</footer>
+</div>
+</div>
+</div>
+</div>
 
 
-    <button onclick="listBoards()">push it</button>
+<button onclick="listBoards()">push it</button>
 <div id="boards">test</div>
 {% endblock %}
