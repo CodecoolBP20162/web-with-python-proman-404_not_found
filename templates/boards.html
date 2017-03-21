@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+{% extends "layout.html" %}
 
-</body>
-</html>
+{% block header %}
+    <script type="text/javascript" src="{{ url_for('static', filename='list_boards.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<button onclick="listBoards()">push it</button>
+<div id="boards">test</div>
+{% endblock %}

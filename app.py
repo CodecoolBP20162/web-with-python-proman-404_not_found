@@ -7,7 +7,7 @@ app.config.from_object(__name__)  # load config from this file , flaskr.py
 
 @app.route('/')
 def root():
-    return render_template('index.html')
+    return render_template('boards.html')
 
 
 if __name__ == '__main__':
