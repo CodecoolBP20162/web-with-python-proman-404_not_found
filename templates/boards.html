@@ -5,6 +5,11 @@
 {% endblock %}
 
 {% block content %}
-<button onclick="listBoards()">push it</button>
-<div id="boards">test</div>
+<form>
+    <input type="text" value="Board Title" id="title">
+
+
+<input type="submit" value="Add new board" onclick="addNewBoard()">
+</form>
+<div id="boards"></div>
 {% endblock %}
