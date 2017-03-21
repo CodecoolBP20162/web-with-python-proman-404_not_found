@@ -3,7 +3,7 @@
  */
 
 function listBoards() {
-    if(typeof(Storage) !== "undefined") {
+    if (typeof (Storage) !== "undefined") {
         if (localStorage.getItem("boards") == null) {
             document.getElementById("boards").innerHTML = "You don't have any boards yet";
         } else {
