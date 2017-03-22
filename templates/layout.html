@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>PROman</title>
+    <title>proman</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -10,7 +10,7 @@
           crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link  href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css">
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -22,6 +22,27 @@
 
 </head>
 <body>
+<nav class="navbar navbar-default navbar-custom">
+    <div class="container-fluid">
+        <div class="navbar-header text-center">
+            <img src="../static/logo.png">
+        </div>
+        <ul class="nav navbar-nav nav-custom">
+            <div class="btn-group dropdown-custom">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    <a class="dropdown-custom" href="/">BOARDS</a> <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu pull-right">
+                    <li><a href="#">My boards</a></li>
+                    <li><a href="#">Create new boards</a></li>
+                </ul>
+
+            </div>
+        </ul>
+    </div>
+    </div>
+</nav>
 {% block content %} {% endblock %}
 </body>
 </html>
