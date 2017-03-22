@@ -7,6 +7,10 @@ app.config.from_object(__name__)  # load config from this file , flaskr.py
 
 @app.route('/')
 def root():
+    return render_template('boards.html')
+
+@app.route('/cards')
+def cards():
     return render_template('cards.html')
 
 
