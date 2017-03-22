@@ -1,13 +1,9 @@
 {% extends "layout.html" %} {% block header %}
     <script type="text/javascript" src="{{ url_for('static', filename='list_boards.js') }}"></script>
-    <link rel="stylesheet" href="../static/style.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-    </style>
 {% endblock %} {% block content %}
 
-<body>
+    <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header text-center">
@@ -16,21 +12,22 @@
         </div>
     </nav>
 
-<ul>
-    <li>
-        <a href="#">
-            <h2>BOARD</h2>
-            <p>Codecool</p>
-        </a>
-    </li>
-    <li>
-        <a href="#">
-            <h2>Title #2</h2>
-            <p>Text Content #2</p>
-        </a>
-    </li>
-</ul>
-<button onclick="listBoards()">push it</button>
-<div id="boards">test</div>
-</body>
+    <ul>
+        <li>
+            <a href="#">
+                <h2>BOARD</h2>
+                <p>Codecool</p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <h2>Title #2</h2>
+                <p>Text Content #2</p>
+            </a>
+        </li>
+    </ul>
+    <button onclick="listBoards()">push it</button>
+    <div id="boards">test</div>
+    </body>
+
 {% endblock %}
