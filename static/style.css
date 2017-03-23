@@ -98,7 +98,7 @@ ul.nav-custom {
 img {
     width: 100px;
     height: 100px;
-    margin-top: -30px;
+    margin-top: -45px;
     margin-left: -30px;
     margin-bottom: -15px;
     padding: 0px
@@ -110,4 +110,8 @@ a.dropdown-custom{
 
 div.dropdown-custom{
 
+}
+
+.navbar-default{
+    background-color: #1b6d85;
 }
