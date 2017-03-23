@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block header %}
+    <script type="text/javascript" src="{{ url_for('static', filename='list_cards.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <form>
+        <input type="text" value="Card Title" id="card_title">
+
+
+        <input type="submit" value="Save" onclick="addNewCard()">
+    </form>
+    <div id="cards"></div>
+
+{% endblock %}
