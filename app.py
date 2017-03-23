@@ -12,10 +12,5 @@ def root():
     return render_template('boards.html')
 
 
-@app.route('/cards')
-def cards():
-    return render_template('cards.html')
-
-
 if __name__ == '__main__':
     app.run(debug=True)
