@@ -6,6 +6,7 @@ function listBoards() {
     if(typeof(Storage) !== "undefined") {
         if (localStorage.getItem("title") == null) {
             document.getElementById("boards").innerHTML = "You don't have any boards yet";
+            addBoardTitle();
         } else {
             printBoards();
         }
@@ -38,5 +39,25 @@ function addNewBoard() {
         var index = title_list.length;
         title_list[index] = title.value;
         localStorage.setItem("title", JSON.stringify(title_list));
-        }
+    }
+    alert("New board added");
 };
+
+function addBoardTitle() {
+    var addTitleForm = "<div class='board'><form>" +
+        "<input type='text' id='title' placeholder='Add title'> " +
+        "<input type='submit' value='Save' onclick='addNewBoard()'>" +
+        "</div>";
+    document.getElementById("boards").innerHTML = addTitleForm;
+};
+
+
+
+
+
+
+
+
+
+
+

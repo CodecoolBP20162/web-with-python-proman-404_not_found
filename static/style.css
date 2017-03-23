@@ -1,0 +1,14 @@
+.board {
+    width: 300px;
+    height: 200px;
+    background-color: lightskyblue;
+}
+
+.board:hover {
+    background-color: aqua;
+}
+
+.board input {
+    text-align: center;
+    vertical-align: middle;
+}
