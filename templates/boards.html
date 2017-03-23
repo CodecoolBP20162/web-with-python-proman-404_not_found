@@ -1,51 +1,32 @@
 {% extends "layout.html" %} {% block header %}
 <script type="text/javascript" src="{{ url_for('static', filename='list_boards.js') }}"></script>
-<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
-<style>
+<meta name="viewport" content="width=device-width, initial-scale=1"> {% endblock %} {% block content %}
 
-</style>
-{% endblock %} {% block content %}
-
-<div class="container-fluid bg-grey">
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="w3-card-4" style="width:90% height:50%;">
-<header class="w3-container w3-blue">
-    <h1>Header</h1>
-</header>
-
-<div class="w3-container">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-
-<footer class="w3-container w3-blue">
-    <h5>Footer</h5>
-</footer>
-</div>
-</div>
-<div class="col-sm-4">
-    <div class="w3-card-4" style="width:90% height:50%;">
-<header class="w3-container w3-blue">
-    <h1>Header</h1>
-</header>
-
-<div class="w3-container">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-
-<footer class="w3-container w3-blue">
-    <h5>Footer</h5>
-</footer>
-</div>
-</div>
-</div>
-</div>
+<body>
 
 
-<button onclick="listBoards()">push it</button>
+    <ul class="sticky">
+        <li>
+            <a href="#">
+                <h2>bevásárlás</h2>
+                <p>alma</p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <h2>suli</h2>
+                <p>proman web app</p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <h2>mozi</h2>
+                <p>némaság</p>
+            </a>
+        </li>
+    </ul>
+    <button onclick="listBoards()">push it</button>
 <div id="boards">test</div>
+</body>
+
 {% endblock %}
