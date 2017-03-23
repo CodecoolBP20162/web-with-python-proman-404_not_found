@@ -1,9 +1,11 @@
 {% extends "layout.html" %} {% block header %}
-<script type="text/javascript" src="{{ url_for('static', filename='list_boards.js') }}"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1"> {% endblock %} {% block content %}
-
 
 <body>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='list_boards.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='LoadData.js') }}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> {% endblock %} {% block content %}
+
 
     <ul class="sticky">
         <li id="draggable" class="ui-widget-content">
