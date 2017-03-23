@@ -101,17 +101,15 @@ img {
     margin-top: -45px;
     margin-left: -30px;
     margin-bottom: -15px;
-    padding: 0px
+    padding: 0px;
 }
 
-a.dropdown-custom{
-    color: black;
+
+.dropdown-toggle{
+    font-size: 18px;
 }
 
-div.dropdown-custom{
-
-}
-
-.navbar-default{
-    background-color: #1b6d85;
+li.dropdown{
+    font-size: 18px;
+    background-color:#969590;
 }
