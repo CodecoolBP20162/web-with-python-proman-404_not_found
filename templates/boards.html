@@ -1,17 +1,33 @@
-{% extends "layout.html" %}
-
-{% block header %}
+{% extends "layout.html" %} {% block header %}
     <script type="text/javascript" src="{{ url_for('static', filename='list_boards.js') }}"></script>
-{% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% endblock %} {% block content %}
 
-{% block content %}
-
-<form>
-    <input type="text" value="Board Title" id="title">
+    <body>
 
 
-<input type="submit" value="Save" onclick="addNewBoard()">
-</form>
-<div id="boards"></div>
+    <ul class="sticky">
+        <li>
+            <a href="#">
+                <h2>bevásárlás</h2>
+                <p>alma</p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <h2>suli</h2>
+                <p>proman web app</p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <h2>mozi</h2>
+                <p>némaság</p>
+            </a>
+        </li>
+    </ul>
+    <button onclick="listBoards()">push it</button>
+    <div id="boards">test</div>
+    </body>
 
 {% endblock %}
