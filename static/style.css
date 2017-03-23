@@ -1,14 +1,19 @@
-.board {
+#add_board {
     width: 300px;
     height: 200px;
     background-color: lightskyblue;
 }
 
-.board:hover {
+#add_board:hover {
     background-color: aqua;
 }
 
-.board input {
-    text-align: center;
-    vertical-align: middle;
+.boards {
+    width: 300px;
+    height: 200px;
+    background-color: lightskyblue;
+}
+
+.boards:hover {
+    background-color: aqua;
 }
