@@ -1,10 +1,22 @@
-{% extends "layout.html" %}
-
-{% block header %}
+{% extends "layout.html" %} {% block header %}
     <script type="text/javascript" src="{{ url_for('static', filename='list_boards.js') }}"></script>
-{% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% endblock %} {% block content %}
 
-{% block content %}
-<button onclick="listBoards()">push it</button>
-<div id="boards">test</div>
+    <body>
+    <ul class="sticky">
+
+        <li>
+            <a>
+                <div id="add_board">
+                    <div id="title" onclick="addBoardTitle()">
+                        <h2><div id="new_title">Click here to add board</div></h2>
+                    </div>
+                </div>
+            </a>
+        </li>
+    <div id="list_all_boards"></div>
+    </ul>
+    </body>
+
 {% endblock %}

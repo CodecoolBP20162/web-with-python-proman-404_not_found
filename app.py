@@ -1,8 +1,10 @@
-from flask import Flask, request, session, g, redirect, url_for, abort, \
-     render_template, flash, session
+from flask import Flask,  \
+    render_template
 
-app = Flask(__name__)
-app.config.from_object(__name__)  # load config from this file , flaskr.py
+app = Flask(__name__, template_folder="templates", static_url_path="/static",
+            static_folder="static")
+
+app.config.from_object(__name__)
 
 
 @app.route('/')
@@ -12,4 +14,3 @@ def root():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
