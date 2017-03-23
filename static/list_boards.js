@@ -23,7 +23,7 @@ function printBoards() {
     var title_array = JSON.parse(localStorage.getItem("title"));
 
     for (var i = 0; i < title_array.length; i++) {
-        html = html + "<li><a><h2>" + title_array[i] +
+        html = html + '<li id="draggable" class="ui- widget - content><a id="draggable" class="ui- widget - content><h2>' + title_array[i] +
             "<br></button><button class='update' onclick='updateBoardTitle(" + i + ")'>Update</button>" +
             "<br><button class='remove' onclick='deleteBoard(" + i + ")'>Remove</h2></a></li>";
     }
