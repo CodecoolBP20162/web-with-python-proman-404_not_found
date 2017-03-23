@@ -14,6 +14,7 @@ h2, p {
 ul.sticky {
     overflow: hidden;
     padding: 3em;
+    text-align: center;
 }
 
 ul.sticky li {
@@ -114,4 +115,48 @@ div.dropdown-custom{
 
 .navbar-default{
     background-color: #1b6d85;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 6px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+input[type=submit] {
+    padding:5px 15px;
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#add_board {
+    text-align: center;
+}
+
+#add_board h2 {
+    color: blue;
+    line-height: 150%;
+}
+
+button {
+    padding:5px 15px;
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.update {
+    background-color: chartreuse;
+}
+
+.remove {
+    background-color: #ea2f10;
 }
