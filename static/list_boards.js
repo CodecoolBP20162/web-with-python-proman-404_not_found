@@ -2,6 +2,8 @@
  * Created by codeorgo-vd on 2017.03.20..
  */
 
+
+
 function listBoards() {
     var all_titles = data_loader.get_all_boards()
     if (typeof (Storage) !== "undefined") {
@@ -17,18 +19,44 @@ function listBoards() {
 
 $(document).ready(function () {
     listBoards();
+
 });
 
 function printBoards() {
     var html = "";
     var title_array = data_loader.get_all_boards();
     for (var i = 0; i < title_array.length; i++) {
-        html = html + "<li><a><h2 class='sticky-title'>" + title_array[i] +
-            "<br></button><button class='update' onclick='updateBoardTitle(" + i + ")'>Update</button>" +
-            "<br><button class='remove' onclick='deleteBoard(" + i + ")'>Remove</h2></a></li>";
+        //html = html + "<li><a><h2 class='sticky-title'>" + title_array[i] +
+        //html = html + '<li id="draggable" class="ui-widget-content"><a,><h2 class="sticky-title">' + title_array[i] +
+        //  "<br></button><button class='update' onclick='updateBoardTitle(" + i + ")'>Update</button>" +
+        //"<br><button class='remove' onclick='deleteBoard(" + i + ")'>Remove</h2></a></li>";
+
+
+        //html = html + "<li><a><h2 class='sticky-title'>" + title_array[i] +
+        // jquery html change
+        html = html + '<li>' +
+            '<a  id="draggable' + i + '" class="ui-widget-content"><h2 class="sticky-title">' + title_array[i] +
+            "<br><button class='update' onclick='updateBoardTitle(" + i + ")'>Update</button>" +
+            "<br><button class='remove' onclick='deleteBoard(" + i + ")'>Remove</button>" +
+            "</h2></a></li>";
     }
     document.getElementById("list_all_boards").innerHTML = html;
+
+    var $newdiv1 = $("<div id='object1'></div>"),
+        newdiv2 = document.createElement("div"),
+        existingdiv1 = document.getElementById("foo");
+
+    $("#list_all_boards").append($newdiv1, [newdiv2, existingdiv1]);
+
+    //$("#list_all_boards").append("<p>paragraph</p>")
+
+    for (var i = 0; i < title_array.length; i++) {
+        var strings = "#draggable" + i;
+        $(strings).draggable();
+    }
 };
+
+
 
 
 function addNewBoard() {
