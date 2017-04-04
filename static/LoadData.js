@@ -3,21 +3,30 @@
  */
 
 function LocalStorage(){
-    this.get_all_boards = function (){
+    this.get_all_boards = function () {
         var all_boards = JSON.parse(localStorage.getItem("title"));
         return all_boards;
     };
 
-    this.change_board = function (title_to_change){
-        var board =localStorage.setItem("title", JSON.stringify(title_to_change));
-        return board
+    this.set_board = function (title){
+        localStorage.setItem("title", JSON.stringify(title));
+
+    };
+    this.get_cards = function () {
+        var all_cards = JSON.parse(localStorage.getItem("cards"));
+        return all_cards;
+
+    };
+    this.set_cards = function(card) {
+        localStorage.setItem("cards", JSON.stringify((card)));
+
+    };
+    this.remove_item = function(param){
+        localStorage.removeItem(param)
     };
 
-    this.remove_board = function (){
-        var title_to_remove = localStorage.removeItem("title");
-        return title_to_remove;
-    };
 };
+
 
 function StatePsql(){
     this.get_all_board = function (){
@@ -40,8 +49,17 @@ function LoadData(state) {
     this.get_all_boards = function() {
         return this.state.get_all_boards();
     };
-    this.get_board = function(id) {
-        return this.state.get_board(id);
+    this.set_board = function(title) {
+        return this.state.set_board(title);
+    };
+    this.get_cards = function() {
+        return this.state.get_cards();
+    };
+    this.set_cards = function(card) {
+        return this.state.set_cards(card);
+    };
+    this.remove_item = function(param){
+        return this.state.remove_item(param);
     };
 
     this.state = state;

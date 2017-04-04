@@ -1,38 +1,69 @@
-function listCards() {
-    if(typeof(Storage) !== "undefined") {
-        if (localStorage.getItem("card_title") == null) {
-            document.getElementById("cards").innerHTML = "You don't have any boards yet";
-        } else {
-            printCards();
+function addNewCard(board_index) {
+    var title = document.getElementById("title");
+    if(title.value !== "") {
+        if (data_loader.get_cards() === null) {
+            data_loader.set_cards([[title.value]]);
         }
-    } else {
-        document.getElementById("cards").innerHTML = "Sorry, your browser does not support web storage...";
+        else {
+            var card_list = data_loader.get_cards();
+            if(typeof card_list[board_index] !== "undefined") {
+                for (var index = 0; index < card_list.length; index++) {
+                    if (index === board_index) {
+                        card_list[board_index][card_list[board_index].length] = title.value;
+                    }
+                }
+            }
+            else {
+                if (card_list.length < board_index) {
+                    var diff = board_index - card_list.length + 1;
+                    for (var e = 0; e < diff; e++) {
+                        card_list.push([]);
+                    }
+                    card_list[board_index] = [title.value];
+                }
+                else {
+                    card_list[board_index] = [title.value];
+                }
+            }
+            data_loader.remove_item("cards");
+            data_loader.set_cards(card_list);
+        }
     }
+    else{
+        alert("Card title is required to add new card!");
+        showCards(board_index);
+        document.getElementById("new_title").innerHTML = "Click here to add new card";
+    }
+
+
+};
+
+
+
+function addCard(board_index) {
+    var addCardForm = "<div class='title'><form>" +
+        "<input type='text' id='title' placeholder='Add new card'> " +
+        "<input type='submit' value='Save' onclick='addNewCard(" + board_index + ")'>" +
+        "</div>";
+    document.getElementById("add_board").innerHTML = addCardForm;
+};
+
+
+function showCards(board_index) {
+    document.getElementById("add_board").innerHTML = "<div id='title' onclick='addCard(" + board_index + ")'>" +
+            "<h2><div id='new_title'>Click here to add new card</div></h2></div>";
+
+    var card_html = "";
+    var all_cards = data_loader.get_cards();
+    if(all_cards != null) {
+        for (var i = 0; i < all_cards.length; i++) {
+            if (i === board_index) {
+                for (var card = 0; card < all_cards[i].length; card++) {
+                    card_html = card_html + "<li><a><h2>" + all_cards[i][card] + "</h2></a></li>";
+                }
+            }
+        }
+    }
+    card_html = card_html + "<button class='back' onclick='printBoards()'>Back to boards</button>";
+    document.getElementById("list_all_boards").innerHTML = card_html;
     };
-
-$(document).ready(function(){
-    listCards();
-});
-
-function printCards() {
-    var html = "";
-    var title_array = JSON.parse(localStorage.getItem("card_title"));
-    for(var i = 0; i < title_array.length; i++) {
-        html = html + "<p>" + title_array[i] + "</p>";
-    }
-    document.getElementById("cards").innerHTML = html;
-};
-
-
-function addNewCard() {
-    var title = document.getElementById("card_title");
-    if (localStorage.getItem("card_title") === null) {
-        localStorage.setItem("card_title", JSON.stringify([title.value]));
-    }
-    else {
-        var title_list = JSON.parse(localStorage.getItem("card_title"));
-        var index = title_list.length;
-        title_list[index] = title.value;
-        localStorage.setItem("card_title", JSON.stringify(title_list));
-        }
-};
