@@ -23,9 +23,11 @@ function printBoards() {
     var html = "";
     var title_array = data_loader.get_all_boards();
     for (var i = 0; i < title_array.length; i++) {
-        html = html + "<li><a><h2 class='sticky-title'>" + title_array[i] +
+        html = html + "<li><a>" +
+            "<h2 class='sticky-title'>" + title_array[i] +
             "<br></button><button class='update' onclick='updateBoardTitle(" + i + ")'>Update</button>" +
-            "<br><button class='remove' onclick='deleteBoard(" + i + ")'>Remove</h2></a></li>";
+            "<br><button class='remove' onclick='deleteBoard(" + i + ")'>Remove</h2>" +
+            "</a></li>";
     }
     document.getElementById("list_all_boards").innerHTML = html;
 };
