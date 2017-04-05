@@ -55,6 +55,7 @@ ul.sticky li h2 {
     font-size: 200%;
     font-weight: bold;
     padding-bottom: 10px;
+    cursor: pointer;
 }
 
 ul.sticky li p {
@@ -165,6 +166,7 @@ button {
 .sticky-title{
     font-family: "Reenie Beanie", arial, sans-serif;
     font-size: 200%;
+    word-wrap: break-word;
 }
 
 .cards {
@@ -175,13 +177,13 @@ button {
 
 .update {
     background-color: grey;
-    font-size: 80%;
-    margin-top: 0px;
+    font-size: 120%;
+    margin-top: 30px;
 }
 
 .remove {
     background-color: #ea2f10;
-    font-size: 80%;
+    font-size: 120%;
     margin-top: 10px;
 }
 
