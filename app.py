@@ -14,12 +14,16 @@ psql_db.create_tables([Boards, Cards])
 
 
 @app.route('/')
-def root():
+def boards():
     return render_template('boards.html')
+
+@app.route('/cards')
+def cards():
+    return render_template('cards.html')
 
 
 @app.route('/boards')
-def create_board():
+def get_board():
     all_boards = Boards.select()
     boards_dict = {}
     for board in all_boards:
@@ -29,10 +33,9 @@ def create_board():
         }
     return jsonify(boards_dict)
 
-
-@app.route('/cards/<boardid>')
-def create_card():
-    all_cards = Cards.select().where(Cards.board_id == boardid)
+@app.route('/get-card/<board_id>')
+def get_card(board_id):
+    all_cards = Cards.select().where(Cards.board == board_id)
     cards_dict = {}
     for card in all_cards:
         cards_dict[str(card.id)] = {
