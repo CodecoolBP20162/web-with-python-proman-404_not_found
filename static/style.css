@@ -167,22 +167,31 @@ button {
     font-size: 200%;
 }
 
+.cards {
+    background-color: yellow;
+    font-size: 100%;
+    margin-top: 10px;
+}
+
 .update {
     background-color: grey;
     font-size: 80%;
-    margin-top: 50px;
+    margin-top: 0px;
 }
 
 .remove {
     background-color: #ea2f10;
-}
-
-.cards {
-    background-color: yellow;
+    font-size: 80%;
+    margin-top: 10px;
 }
 
 .back {
-    background-color: indianred;
-    font-size: 80%;
+    background-color: darkgrey;
+    font-size: 250%;
+    color: black;
     border: 3px;
+}
+
+#back-button {
+    margin-left: 480px;
 }
