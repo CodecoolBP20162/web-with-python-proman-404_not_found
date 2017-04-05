@@ -1,9 +1,15 @@
+from get_db import *
 from flask import Flask, render_template
+
 
 app = Flask(__name__, template_folder="templates", static_url_path="/static",
             static_folder="static")
 
 app.config.from_object(__name__)
+
+psql_db.connect()
+
+psql_db.create_tables([Boards, Cards])
 
 
 @app.route('/')
