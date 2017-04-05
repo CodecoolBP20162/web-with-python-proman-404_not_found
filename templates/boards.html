@@ -1,5 +1,7 @@
 {% extends "layout.html" %} {% block header %}
 
+<body>
+
     <script type="text/javascript" src="{{ url_for('static', filename='list_boards.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='list_cards.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='LoadData.js') }}"></script>
@@ -7,12 +9,11 @@
 
 {% endblock %} {% block content %}
 
-    <body>
     <div id="back-button">
     </div>
     <ul class="sticky">
         <li>
-            <a>
+            <a id="draggable" class="ui-widget-content">
                 <div id="add_board">
                     <div id="title" onclick="addBoardTitle()">
                         <h2>
