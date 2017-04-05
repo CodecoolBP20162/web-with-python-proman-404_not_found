@@ -1,12 +1,12 @@
 from peewee import *
 
-psql_db = PostgresqlDatabase(database_name, user=database_user)
+psql_db = PostgresqlDatabase('gombaspeteer', user='gombaspeteer')
 
 
 class BaseModel(Model):
 
     class Meta:
-        database = db
+        database = psql_db
 
 
 class Boards(BaseModel):
