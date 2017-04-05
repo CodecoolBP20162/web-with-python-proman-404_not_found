@@ -19,14 +19,16 @@ function printBoards() {
     var html = "";
     var title_array = data_loader.get_all_boards();
     for (var i = 0; i < title_array.length; i++) {
-        html = html + "<li><a>" +
-            "<h2 class='sticky-title'>" + title_array[i] +
-            "<br></button><button class='update' onclick='updateBoardTitle(" + i + ")'>Update</button>" +
-            "<br><button class='remove' onclick='deleteBoard(" + i + ")'>Remove " +
-            "<br><button class='cards' onclick='showCards(" + i + ")'>Cards</h2></a></li>";
+        html = html + "<li><div><a class='cards'>" +
+            "<h2 class='sticky-title'  onclick='showCards(" + i + ")'>" + title_array[i] + "</h2>" +
+            "<button id='update-board' class='update' onclick='updateBoardTitle(" + i + ")'>Update</button>" +
+            "<br><button class='remove' onclick='deleteBoard(" + i + ")'>Remove " + "</button>" +
+            "<br></div></a></li>";
     }
     document.getElementById("add_board").innerHTML = "<div id='title' onclick='addBoardTitle()'>" +
         "<h2><div id='new_title'>Click here to add new board</div></h2></div>";
+    boards = document.getElementById("list_all_boards")
+    document.getElementById("back-button").innerHTML = "";
     document.getElementById("list_all_boards").innerHTML = html;
 }
 
@@ -53,7 +55,7 @@ function addNewBoard() {
 
 function addBoardTitle() {
     var addTitleForm = "<div class='title'><form>" +
-        "<input type='text' id='title' placeholder='Add new board title'> " +
+        "<input type='text' id='title' placeholder='Add new board title' maxlength='30'> " +
         "<input type='submit' value='Save' onclick='addNewBoard()'>" +
         "</div>";
     document.getElementById("add_board").innerHTML = addTitleForm;
