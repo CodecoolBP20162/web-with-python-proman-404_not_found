@@ -1,6 +1,6 @@
 from peewee import *
 
-psql_db = PostgresqlDatabase('gombaspeteer', user='gombaspeteer')
+psql_db = PostgresqlDatabase('judit', user='judit')
 
 
 class BaseModel(Model):
@@ -17,4 +17,4 @@ class Boards(BaseModel):
 class Cards(BaseModel):
 
     title = CharField()
-    board_title = ForeignKeyField(Boards, related_name='boards_list')
+    board_id = ForeignKeyField(Boards, related_name='cards_list')
