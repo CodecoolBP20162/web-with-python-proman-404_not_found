@@ -1,9 +1,5 @@
-/**
- * Created by codeorgo-vd on 2017.03.20..
- */
-
 function listBoards() {
-    var all_titles = data_loader.get_all_boards()
+    var all_titles = data_loader.get_all_boards();
     if (typeof(Storage) !== "undefined") {
         if (all_titles == null) {
             document.getElementById("list_all_boards").innerHTML = "You don't have any boards yet";
@@ -13,7 +9,7 @@ function listBoards() {
     } else {
         document.getElementById("list_all_boards").innerHTML = "Sorry, your browser does not support web storage...";
     }
-};
+}
 
 $(document).ready(function () {
     listBoards();
@@ -30,9 +26,9 @@ function printBoards() {
             "<br><button class='cards' onclick='showCards(" + i + ")'>Cards</h2></a></li>";
     }
     document.getElementById("add_board").innerHTML = "<div id='title' onclick='addBoardTitle()'>" +
-            "<h2><div id='new_title'>Click here to add new board</div></h2></div>";
+        "<h2><div id='new_title'>Click here to add new board</div></h2></div>";
     document.getElementById("list_all_boards").innerHTML = html;
-};
+}
 
 
 function addNewBoard() {
@@ -53,7 +49,7 @@ function addNewBoard() {
         alert("Board title is required to add new board!");
     }
     listBoards()
-};
+}
 
 function addBoardTitle() {
     var addTitleForm = "<div class='title'><form>" +
@@ -61,7 +57,7 @@ function addBoardTitle() {
         "<input type='submit' value='Save' onclick='addNewBoard()'>" +
         "</div>";
     document.getElementById("add_board").innerHTML = addTitleForm;
-};
+}
 
 function deleteBoard(board_index) {
     var all_titles = data_loader.get_all_boards();
@@ -79,7 +75,7 @@ function deleteBoard(board_index) {
 
     var all_cards = data_loader.get_cards();
     var new_cards = [];
-    for(var i = 0; i < all_cards.length; i++) {
+    for (var i = 0; i < all_cards.length; i++) {
         if (i !== board_index) {
             new_cards.push(all_cards[i]);
         }
@@ -90,10 +86,10 @@ function deleteBoard(board_index) {
     data_loader.remove_item("cards");
     data_loader.set_cards(new_cards);
     listBoards();
-};
+}
 
 function updateBoardTitle(board_index) {
-    var all_titles = data_loader.get_all_boards()
+    var all_titles = data_loader.get_all_boards();
     var new_titles = [];
     for (var i = 0; i < all_titles.length; i++) {
         if (i !== board_index) {
@@ -113,4 +109,4 @@ function updateBoardTitle(board_index) {
     data_loader.remove_item("title");
     data_loader.set_board(new_titles);
     listBoards();
-};
+}
