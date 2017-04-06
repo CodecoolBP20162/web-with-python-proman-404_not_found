@@ -1,21 +1,29 @@
 {% extends "layout.html" %} {% block header %}
+
+<body>
+
     <script type="text/javascript" src="{{ url_for('static', filename='list_boards.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='list_cards.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='LoadData.js') }}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
 {% endblock %} {% block content %}
 
-    <body>
+    <div id="back-button">
+    </div>
     <ul class="sticky">
         <li>
-            <a>
+            <a id="draggable" class="ui-widget-content">
                 <div id="add_board">
-                    <div id="title"  onclick="addBoardTitle()">
-                        <h2><div id="new_title">Click here to add new board</div></h2>
+                    <div id="title" onclick="addBoardTitle()">
+                        <h2>
+                            <div id="new_title">Click here to add new board</div>
+                        </h2>
                     </div>
                 </div>
             </a>
         </li>
-    <div id="list_all_boards"></div>
+        <div id="list_all_boards"></div>
     </ul>
     </body>
 

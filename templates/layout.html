@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>proman</title>
@@ -18,17 +19,27 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $(".draggable").draggable();
+        });
+    </script>
     {% block header %} {% endblock %}
 
 </head>
 
 <body>
 
+
 <nav class="navbar navbar-default navbar-custom">
     <div class="container-fluid">
         <div class="navbar-header text-center">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
             </button>
             <a class="navbar-brand" href="/"><img src="../static/logo2.png"> </a>
         </div>
@@ -41,4 +52,5 @@
 {% block content %} {% endblock %}
 
 </body>
+
 </html>
