@@ -7,9 +7,9 @@ app = Flask(__name__, template_folder="templates", static_url_path="/static",
 
 app.config.from_object(__name__)
 
-psql_db.connect()
-psql_db.drop_tables([Boards, Cards])
-psql_db.create_tables([Boards, Cards])
+#psql_db.connect()
+#psql_db.drop_tables([Boards, Cards])
+#psql_db.create_tables([Boards, Cards])
 
 
 @app.route('/')
