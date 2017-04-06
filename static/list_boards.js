@@ -26,17 +26,6 @@ function printBoards() {
             "<br></div></a></li>";
     }
 
-    var $newdiv1 = $("<div id='object1'></div>"),
-        newdiv2 = document.createElement("div"),
-        existingdiv1 = document.getElementById("foo");
-
-    $("#list_all_boards").append($newdiv1, [newdiv2, existingdiv1]);
-
-    for (var i = 0; i < title_array.length; i++) {
-        var strings = "#draggable" + i;
-        $(strings).draggable();
-}
-
     document.getElementById("add_board").innerHTML = "<div id='title' onclick='addBoardTitle()'>" +
         "<h2><div id='new_title'>Click here to add new board</div></h2></div>";
     boards = document.getElementById("list_all_boards");
