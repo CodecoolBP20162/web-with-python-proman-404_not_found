@@ -41,7 +41,7 @@ function addNewCard(board_index) {
 
 function addCard(board_index) {
     var addCardForm = "<div class='title'><form>" +
-        "<input type='text' id='title' placeholder='Add new card'> " +
+        "<input type='text' id='title' placeholder='Add new card' maxlength='30'>" +
         "<input type='submit' value='Save' onclick='addNewCard(" + board_index + ")'>" +
         "</div>";
     document.getElementById("add_board").innerHTML = addCardForm;
