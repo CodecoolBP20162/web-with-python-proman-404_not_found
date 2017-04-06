@@ -2,7 +2,7 @@ function listBoards() {
     var all_titles = data_loader.get_all_boards();
     if (typeof(Storage) !== "undefined") {
         if (all_titles == null) {
-            document.getElementById("list_all_boards").innerHTML = "You don't have any boards yet";
+            document.getElementById("list_all_boards").innerHTML = "";
         } else {
             printBoards();
         }
