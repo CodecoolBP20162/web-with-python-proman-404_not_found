@@ -1,4 +1,12 @@
+click==6.7
 Flask==0.12
 gunicorn==19.7.1
 itsdangerous==0.24
 Jinja2==2.9.5
+MarkupSafe==0.23
+olefile==0.44
+peewee==2.8.5
+Pillow==4.0.0
+psycopg2==2.6.2
+requests==2.13.0
+Werkzeug==0.11.15
