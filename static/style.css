@@ -55,6 +55,7 @@ ul.sticky li h2 {
     font-size: 200%;
     font-weight: bold;
     padding-bottom: 10px;
+    cursor: pointer;
 }
 
 ul.sticky li p {
@@ -165,24 +166,34 @@ button {
 .sticky-title{
     font-family: "Reenie Beanie", arial, sans-serif;
     font-size: 200%;
-}
-
-.update {
-    background-color: grey;
-    font-size: 80%;
-    margin-top: 50px;
-}
-
-.remove {
-    background-color: #ea2f10;
+    word-wrap: break-word;
 }
 
 .cards {
     background-color: yellow;
+    font-size: 100%;
+    margin-top: 10px;
+}
+
+.update {
+    background-color: grey;
+    font-size: 120%;
+    margin-top: 30px;
+}
+
+.remove {
+    background-color: #ea2f10;
+    font-size: 120%;
+    margin-top: 10px;
 }
 
 .back {
-    background-color: indianred;
-    font-size: 80%;
+    background-color: darkgrey;
+    font-size: 250%;
+    color: black;
     border: 3px;
+}
+
+#back-button {
+    margin-left: 480px;
 }

@@ -36,9 +36,7 @@ function addNewCard(board_index) {
     }
 
 
-};
-
-
+}
 
 function addCard(board_index) {
     var addCardForm = "<div class='title'><form>" +
@@ -46,10 +44,11 @@ function addCard(board_index) {
         "<input type='submit' value='Save' onclick='addNewCard(" + board_index + ")'>" +
         "</div>";
     document.getElementById("add_board").innerHTML = addCardForm;
-};
+}
 
 
 function showCards(board_index) {
+    document.getElementById("back-button").innerHTML = "<button class='back' onclick='printBoards()'>Back to boards</button>";
     document.getElementById("add_board").innerHTML = "<div id='title' onclick='addCard(" + board_index + ")'>" +
             "<h2><div id='new_title'>Click here to add new card</div></h2></div>";
 
@@ -59,11 +58,10 @@ function showCards(board_index) {
         for (var i = 0; i < all_cards.length; i++) {
             if (i === board_index) {
                 for (var card = 0; card < all_cards[i].length; card++) {
-                    card_html = card_html + "<li><a><h2>" + all_cards[i][card] + "</h2></a></li>";
+                    card_html = card_html + "<div><li><a><h2 class='sticky-title'>" + all_cards[i][card] + "</h2></a></li></div>";
                 }
             }
         }
     }
-    card_html = card_html + "<button class='back' onclick='printBoards()'>Back to boards</button>";
     document.getElementById("list_all_boards").innerHTML = card_html;
-    };
+    }
