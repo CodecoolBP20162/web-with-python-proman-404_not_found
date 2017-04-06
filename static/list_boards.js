@@ -19,15 +19,16 @@ function printBoards() {
     var html = "";
     var title_array = data_loader.get_all_boards();
     for (var i = 0; i < title_array.length; i++) {
-        html = html + "<li><div><a class='cards'>" +
+        html = html + "<li><div><a class='cards' " + 'id="draggable' + i + '" class="ui-widget-content">' +
             "<h2 class='sticky-title'  onclick='showCards(" + i + ")'>" + title_array[i] + "</h2>" +
             "<button id='update-board' class='update' onclick='updateBoardTitle(" + i + ")'>Update</button>" +
             "<br><button class='remove' onclick='deleteBoard(" + i + ")'>Remove " + "</button>" +
             "<br></div></a></li>";
     }
+
     document.getElementById("add_board").innerHTML = "<div id='title' onclick='addBoardTitle()'>" +
         "<h2><div id='new_title'>Click here to add new board</div></h2></div>";
-    boards = document.getElementById("list_all_boards")
+    boards = document.getElementById("list_all_boards");
     document.getElementById("back-button").innerHTML = "";
     document.getElementById("list_all_boards").innerHTML = html;
 }

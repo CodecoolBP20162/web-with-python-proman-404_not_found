@@ -28,6 +28,7 @@ function addNewCard(board_index) {
             data_loader.remove_item("cards");
             data_loader.set_cards(card_list);
         }
+    showCards(board_index);
     }
     else{
         alert("Card title is required to add new card!");
@@ -40,7 +41,7 @@ function addNewCard(board_index) {
 
 function addCard(board_index) {
     var addCardForm = "<div class='title'><form>" +
-        "<input type='text' id='title' placeholder='Add new card'> " +
+        "<input type='text' id='title' placeholder='Add new card' maxlength='30'>" +
         "<input type='submit' value='Save' onclick='addNewCard(" + board_index + ")'>" +
         "</div>";
     document.getElementById("add_board").innerHTML = addCardForm;
@@ -58,10 +59,66 @@ function showCards(board_index) {
         for (var i = 0; i < all_cards.length; i++) {
             if (i === board_index) {
                 for (var card = 0; card < all_cards[i].length; card++) {
-                    card_html = card_html + "<div><li><a><h2 class='sticky-title'>" + all_cards[i][card] + "</h2></a></li></div>";
+                    card_html = card_html + "<div><li><a><h2 class='sticky-title'>" + all_cards[i][card] + "</h2>" +
+                        "<button id='update-board' class='update' " +
+                        "onclick='updateCardTitle(" +board_index + "," + card + ")'>Update</button>" +
+                        "<br><button class='remove' onclick='deleteCard(" + board_index + "," + card + ")'>Remove " +
+                        "</button></a></li></div>";
                 }
             }
         }
     }
     document.getElementById("list_all_boards").innerHTML = card_html;
+}
+
+
+function updateCardTitle(board_index, card_index) {
+    var all_cards = data_loader.get_cards();
+    var new_cards = [];
+
+    for (var board = 0; board < all_cards.length; board++) {
+        new_cards.push([]);
+        if (board === board_index) {
+            for (var card = 0; card < all_cards[board].length; card++) {
+                if (card !== card_index) {
+                    new_cards[board].push(all_cards[board][card]);
+                }
+                else {
+                    var updated_title = prompt("New title:");
+                    if (updated_title) {
+                        new_cards[board][card] = updated_title;
+                    }
+                    else {
+                        new_cards[board][card] = all_cards[board][card];
+                        alert("Title didn't change");
+                    }
+
+
+
+                }
+            }
+        }
     }
+    data_loader.remove_item("cards");
+    data_loader.set_cards(new_cards);
+    showCards(board_index);
+}
+
+function deleteCard(board_index, card_index) {
+    var all_cards = data_loader.get_cards();
+    var new_cards = [];
+
+    for (var board = 0; board < all_cards.length; board++) {
+        new_cards.push([]);
+        if (board === board_index) {
+            for (var card = 0; card < all_cards[board].length; card++) {
+                if (card !== card_index) {
+                    new_cards[board].push(all_cards[board][card]);
+                }
+            }
+        }
+        data_loader.remove_item("cards");
+        data_loader.set_cards(new_cards);
+        showCards(board_index);
+    }
+}
