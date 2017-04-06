@@ -34,6 +34,11 @@ function printBoards() {
 
 
 function addNewBoard() {
+     var all_cards = data_loader.get_all_boards()
+    if (all_cards === null) {
+        data_loader.set_cards([]);
+    };
+
     var all_titles = data_loader.get_all_boards();
     var title = document.getElementById("title");
     if (title.value !== "") {
@@ -62,32 +67,36 @@ function addBoardTitle() {
 }
 
 function deleteBoard(board_index) {
-    var all_titles = data_loader.get_all_boards();
-    var new_titles = [];
-    for (var i = 0; i < all_titles.length; i++) {
-        if (i !== board_index) {
-            new_titles.push(all_titles[i]);
-        }
-        else {
-            continue;
-        }
-    }
-    data_loader.remove_item("title");
-    data_loader.set_board(new_titles);
+   var all_titles = data_loader.get_all_boards();
+   var new_titles = [];
+   for (var i = 0; i < all_titles.length; i++) {
+       if (i !== board_index) {
+           new_titles.push(all_titles[i]);
+       }
+       else {
+           continue;
+       }
+   }
+   data_loader.remove_item("title");
+   data_loader.set_board(new_titles);
 
-    var all_cards = data_loader.get_cards();
-    var new_cards = [];
-    for (var i = 0; i < all_cards.length; i++) {
-        if (i !== board_index) {
-            new_cards.push(all_cards[i]);
-        }
-        else {
-            continue;
-        }
-    }
-    data_loader.remove_item("cards");
-    data_loader.set_cards(new_cards);
-    listBoards();
+   var all_cards = data_loader.get_cards();
+   if (all_cards === null){
+       data_loader.set_cards([]);
+       all_cards = data_loader.get_cards();
+   };
+   var new_cards = [];
+   for (var i = 0; i < all_cards.length; i++) {
+       if (i !== board_index) {
+           new_cards.push(all_cards[i]);
+       }
+       else {
+           continue;
+       }
+   }
+   data_loader.remove_item("cards");
+   data_loader.set_cards(new_cards);
+   listBoards();
 }
 
 function updateBoardTitle(board_index) {
