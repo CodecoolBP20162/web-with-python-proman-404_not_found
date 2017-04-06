@@ -28,6 +28,7 @@ function addNewCard(board_index) {
             data_loader.remove_item("cards");
             data_loader.set_cards(card_list);
         }
+    showCards(board_index);
     }
     else{
         alert("Card title is required to add new card!");
