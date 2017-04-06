@@ -23,7 +23,7 @@ def cards():
 
 
 @app.route('/boards')
-def get_board():
+def get_boards():
     all_boards = Boards.select()
     boards_dict = {}
     for board in all_boards:
@@ -33,8 +33,9 @@ def get_board():
         }
     return jsonify(boards_dict)
 
-@app.route('/get-card/<board_id>')
-def get_card(board_id):
+
+@app.route('/boards/<board_id>')
+def get_board(board_id):
     all_cards = Cards.select().where(Cards.board == board_id)
     cards_dict = {}
     for card in all_cards:
@@ -44,10 +45,6 @@ def get_card(board_id):
         }
     return jsonify(cards_dict)
 
-
-@app.route('/deffered')
-def deffered():
-    return render_template('deffered.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
